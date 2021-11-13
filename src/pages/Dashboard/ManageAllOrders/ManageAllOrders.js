@@ -35,7 +35,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/orders")
+        fetch("https://enigmatic-brook-72353.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -43,7 +43,7 @@ const ManageAllOrders = () => {
     const handleApproveStatus = id => {
         const proceed = window.confirm('Do you want to upgrade order status to shipped?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://enigmatic-brook-72353.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'PUT'
             })
@@ -60,7 +60,7 @@ const ManageAllOrders = () => {
     const handleDeleteWatch = id => {
         const proceed = window.confirm("Are you sure you want to delete?");
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://enigmatic-brook-72353.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

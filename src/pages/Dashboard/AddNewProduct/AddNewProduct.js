@@ -9,7 +9,7 @@ const AddNewProduct = () => {
     const [success, setSuccess] = React.useState(false);
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/watches', data)
+        axios.post('https://enigmatic-brook-72353.herokuapp.com/watches', data)
             .then(res => {
                 if (res.data.insertedId) {
                     setSuccess(true);

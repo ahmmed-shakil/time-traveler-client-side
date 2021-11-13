@@ -30,7 +30,7 @@ const Review = () => {
         data.rating = value;
         data.img = user.photoURL;
         //send review to database
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://enigmatic-brook-72353.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

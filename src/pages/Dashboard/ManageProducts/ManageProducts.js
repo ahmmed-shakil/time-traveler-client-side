@@ -34,14 +34,14 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const ManageProducts = () => {
     const [watches, setWatches] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/watches")
+        fetch("https://enigmatic-brook-72353.herokuapp.com/watches")
             .then(res => res.json())
             .then(data => setWatches(data))
     }, [])
     const handleDeleteWatch = id => {
         const proceed = window.confirm("Are you sure you want to delete?");
         if (proceed) {
-            const url = `http://localhost:5000/watches/${id}`
+            const url = `https://enigmatic-brook-72353.herokuapp.com/watches/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

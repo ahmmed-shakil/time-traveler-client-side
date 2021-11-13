@@ -17,7 +17,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/watches/${id}`)
+        fetch(`https://enigmatic-brook-72353.herokuapp.com/watches/${id}`)
             .then(res => res.json())
             .then(data => setWatch(data))
     }, [id])
@@ -30,7 +30,7 @@ const Purchase = () => {
             price: watch.price,
             img: watch.img
         };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://enigmatic-brook-72353.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
