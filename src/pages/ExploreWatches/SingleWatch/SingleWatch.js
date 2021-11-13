@@ -9,27 +9,27 @@ const SingleWatch = ({ watch }) => {
         history.push(`/purchase/${id}`);
     }
     return (
-        <Grid item xs={2} sm={4} md={4}>
-            <Card sx={{ maxWidth: 345, fontFamily: "Mohave" }}>
+        <Grid item sm={12} md={4}>
+            <Card elevation={3} sx={{ fontFamily: "Mohave", mx: 'auto' }}>
                 <CardMedia
                     component="img"
                     height="250"
                     image={img}
                     alt="watch"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" sx={{ fontWeight: '500' }} component="div">
+                <CardContent sx={{ textAlign: 'left' }}>
+                    <Typography gutterBottom variant="h5" sx={{ fontWeight: '600' }} component="div">
                         {title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {description.slice(0, 150)}...
                     </Typography>
-                    <Typography variant="h6" sx={{ pt: 3 }}>
+                    <Typography variant="h6" sx={{ pt: 3, fontWeight: '600' }}>
                         Price: ${price}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button onClick={() => goToPurchase(_id)} sx={{ background: '#A99577', border: '2px solid #A99577', borderRadius: '0', marginTop: '10px', transition: 'all ease-in-out 0.2s', color: 'white', mb: '3', width: '100%', '&:hover': { background: 'transparent', color: 'black', border: '2px solid black' } }}>BUY NOW</Button>
+                    <Button onClick={() => goToPurchase(_id)} sx={{ background: '#cfb54c', border: '2px solid #cfb54c', borderRadius: '0', marginTop: '10px', transition: 'all ease-in-out 0.2s', color: 'white', mb: '3', width: '100%', '&:hover': { background: 'transparent', color: 'black', border: '2px solid black' } }}>BUY NOW</Button>
                 </CardActions>
             </Card>
         </Grid>

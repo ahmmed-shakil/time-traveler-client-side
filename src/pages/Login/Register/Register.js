@@ -65,7 +65,7 @@ const Register = () => {
                                 onBlur={handleOnBlur}
                                 variant="standard" />
 
-                            <Button sx={{ width: '75%', m: 1, backgroundColor: 'transparent', color: 'black', fontWeight: 'bold', border: '2px solid gray', transition: 'all ease-out 1s', '&:hover': { backgroundColor: '#A99577', color: 'black' } }} type="submit" className='btn-register'>Register</Button>
+                            <Button sx={{ width: '75%', m: 1, backgroundColor: 'transparent', color: 'black', fontWeight: 'bold', border: '2px solid gray', transition: 'all ease-out 1s', '&:hover': { backgroundColor: '#cfb54c', color: 'black' } }} type="submit" className='btn-register'>Register</Button>
                             {notMatched && <Alert severity="error">Password did not match. Try again!</Alert>}
                             <NavLink
                                 style={{ textDecoration: 'none' }}

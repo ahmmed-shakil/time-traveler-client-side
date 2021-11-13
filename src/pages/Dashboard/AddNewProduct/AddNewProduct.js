@@ -32,12 +32,10 @@ const AddNewProduct = () => {
             <TextField variant="standard" placeholder="Image Url" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} {...register("img")} />
             <TextField variant="standard" placeholder="Title" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} {...register("title")} />
             <TextField variant="standard" placeholder="price" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} type="text" {...register("price")} />
-            <TextField variant="standard" placeholder="specification1" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} type="text" {...register("spec1")} />
-            <TextField variant="standard" placeholder="specification2" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} type="text" {...register("spec2")} />
-            <TextField variant="standard" placeholder="specification3" sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2 }} type="text" {...register("spec3")} />
+
             <TextField variant="standard" placeholder="Description" rows={3} multiline sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2, resize: 'vertical' }} type="number" {...register("description", { min: 18, max: 99 })} />
 
-            <Button sx={{ background: 'transparent', border: '2px solid black', borderRadius: '0', py: '10px', px: '25px', marginTop: '10px', transition: 'all ease-in-out 0.5s', color: 'black', '&:hover': { background: '#A99577', color: 'white', border: '2px solid #A99577' } }} type="submit" >ADD WATCH</Button>
+            <Button sx={{ background: 'transparent', border: '2px solid black', borderRadius: '0', py: '10px', px: '25px', marginTop: '10px', transition: 'all ease-in-out 0.5s', color: 'black', '&:hover': { background: '#cfb54c', color: 'white', border: '2px solid #cfb54c' } }} type="submit" >ADD WATCH</Button>
         </Box>
     );
 };

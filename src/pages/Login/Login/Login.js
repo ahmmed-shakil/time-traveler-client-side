@@ -49,7 +49,7 @@ const Login = () => {
                                 name="password"
                                 onChange={handleOnChange}
                                 variant="standard" />
-                            <Button sx={{ width: '75%', m: 1, backgroundColor: '#A99577', color: 'black', fontWeight: 'bold', border: '2px solid gray', transition: 'all ease-in 1s', '&:hover': { backgroundColor: 'transparent', color: 'black' } }} type="submit">Login</Button>
+                            <Button sx={{ width: '75%', m: 1, backgroundColor: '#cfb54c', color: 'black', fontWeight: 'bold', border: '2px solid gray', transition: 'all ease-in 1s', '&:hover': { backgroundColor: 'transparent', color: 'black' } }} type="submit">Login</Button>
                             {user?.email && <Alert severity="success">Login successfully!</Alert>}
                             {authError && <Alert severity="error">{authError}</Alert>}
                         </form>

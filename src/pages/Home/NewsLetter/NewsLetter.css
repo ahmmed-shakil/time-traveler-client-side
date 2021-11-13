@@ -1,0 +1,14 @@
+.newsletter input{
+    border:none;
+    border-radius: 5px;
+    width:60%
+}
+.newsletter input:focus{
+    border:none;
+    outline:none
+}
+@media screen and (max-width:992px) {
+    .newsletter input{
+        width: 95%;
+    }
+}

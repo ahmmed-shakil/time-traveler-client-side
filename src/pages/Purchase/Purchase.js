@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { Button, Grid, Container, TextField, Paper, ButtonBase, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import Navigation from '../Shared/Navigation/Navigation/Navigation';
 
 const Purchase = () => {
     const [watch, setWatch] = React.useState({});
@@ -48,8 +49,13 @@ const Purchase = () => {
 
     return (
         <Container>
-            <Grid container spacing={2} columns={12}>
-                <Grid item xs={12} md={4}>
+            <Navigation></Navigation>
+            <h3 style={{ background: '#cfb54c', marginTop: '50px' }}>CONFIRM YOUR ORDER NOW</h3>
+            <Grid container spacing={4} columns={12} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Grid item xs={12} md={6}>
+                    <Typography sx={{ fontFamily: 'Poppins', textAlign: 'left' }} variant="h6" gutterBottom component="div">
+                        Please fill up the form with shipping information
+                    </Typography>
                     <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
 
                         <TextField sx={{ width: { lg: '100%', md: '90%', xs: '80%' }, my: 2 }} {...register("name")} defaultValue={user.displayName} type="text" id="standard-basic" label="Full Name" variant="standard" required />
@@ -64,37 +70,25 @@ const Purchase = () => {
 
                         <TextField sx={{ width: { lg: '100%', md: '90%', xs: '80%' }, my: 2 }} {...register("city")} type="text" id="standard-basic" label="City" variant="standard" required />
 
-                        <Button sx={{ background: '#A99577', border: '2px solid #A99577', borderRadius: '0', marginTop: '10px', transition: 'all ease-in-out 0.2s', color: 'white', mb: '3', width: '100%', '&:hover': { background: 'transparent', color: 'black', border: '2px solid black' } }} type="submit">Confirm Order</Button>
+                        <Button sx={{ background: '#cfb54c', border: '2px solid #cfb54c', borderRadius: '0', marginTop: '10px', transition: 'all ease-in-out 0.2s', color: 'white', mb: '3', width: '100%', '&:hover': { background: 'transparent', color: 'black', border: '2px solid black' } }} type="submit">Confirm Order</Button>
                     </Box>
                 </Grid>
 
 
-                <Grid item xs={12} md={8}>
-                    <Paper sx={{ p: 2, margin: 'auto', maxWidth: '90%', flexGrow: 1 }}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm container>
-                                <Grid item xs container direction="column" spacing={2}>
-                                    <Grid item xs>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {watch.title}
-                                        </Typography>
-                                        <Typography variant="body2" gutterBottom>
-                                            Full resolution 1920x1080 • JPEG
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            ID: 1030114
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-
-                            <Grid item>
-                                <ButtonBase sx={{ width: 250, height: 180 }}>
-                                    <img style={{ width: '100%', height: '100%' }} alt="complex" src={watch.img} />
-                                </ButtonBase>
-                            </Grid>
-                        </Grid>
-                    </Paper>
+                <Grid item xs={12} md={6} sx={{ textAlign: 'left' }}>
+                    <img src={watch?.img} alt='watch' style={{ width: '70%', height: '250px' }} />
+                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: 'bold' }} variant="h5" gutterBottom component="div">
+                        {watch?.title}
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'Poppins' }} variant="h6" gutterBottom component="div">
+                        ${watch?.price}
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: 'bold', my: 2 }} variant="p" gutterBottom component="div">
+                        Description:
+                    </Typography>
+                    <Typography sx={{ fontFamily: 'Poppins' }} variant="subtitle1" gutterBottom component="div">
+                        {watch?.description}
+                    </Typography>
                 </Grid>
             </Grid>
         </Container>

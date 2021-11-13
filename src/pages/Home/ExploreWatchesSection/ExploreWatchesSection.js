@@ -17,22 +17,20 @@ const ExploreWatchesSection = () => {
         <div>
             <Navigation></Navigation>
             <Container sx={{ pt: 5 }}>
-                <Typography sx={{ pt: 8, color: '#A99577' }} variant="subtitle1" gutterBottom component="div">
+                <Typography sx={{ pt: 8, color: '#cfb54c', fontFamily: 'Poppins' }} variant="subtitle1" gutterBottom component="div">
                     OUR PRODUCTS
                 </Typography>
-                <Typography sx={{ mb: 5 }} variant="h3" gutterBottom component="div">
+                <Typography sx={{ mb: 5, fontFamily: 'Poppins' }} variant="h4" gutterBottom component="div">
                     Our Bestsellers
                 </Typography>
-                <Box sx={{ flexGrow: 1 }}>
-                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                        {
-                            watches.map(watch => <SingleWatch
-                                key={watch._id}
-                                watch={watch}
-                            ></SingleWatch>)
-                        }
-                    </Grid>
-                </Box>
+                <Grid container spacing={{ xs: 1, md: 3 }}>
+                    {
+                        watches.slice(0, 6).map(watch => <SingleWatch
+                            key={watch._id}
+                            watch={watch}
+                        ></SingleWatch>)
+                    }
+                </Grid>
             </Container>
         </div>
     );

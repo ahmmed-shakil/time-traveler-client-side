@@ -3,19 +3,22 @@
     font-size: 1rem; 
 }
 .text-color{
-    color: #A99577;
+    color: #cfb54c;
+    font-family: 'Poppins';
+    font-weight: 600;
 }
 .nav-item{
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 5px 0px;
     margin-top:10px;
     margin-left: 15px;
     border-bottom: 3px solid transparent;
     font-weight: 600;
+    font-family: 'Poppins';
 }
 
 .nav-item:hover , .nav-item.active {
-    border-bottom: 3px solid #A99577;
-    color: #A99577;
+    border-bottom: 3px solid #cfb54c;
+    color: #cfb54c;
 }

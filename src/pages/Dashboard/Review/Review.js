@@ -28,6 +28,7 @@ const Review = () => {
     const { reset, register, handleSubmit } = useForm();
     const onSubmit = data => {
         data.rating = value;
+        data.img = user.photoURL;
         //send review to database
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -91,7 +92,7 @@ const Review = () => {
             </Box>
             <TextField variant="standard" placeholder="Write Your Review" rows={3} multiline sx={{ width: { lg: '45%', md: '65%', xs: '80%' }, my: 2, resize: 'vertical' }} type="number" {...register("review", { min: 18, max: 99 })} />
 
-            <Button sx={{ background: 'transparent', border: '2px solid black', borderRadius: '0', py: '10px', px: '25px', marginTop: '10px', transition: 'all ease-in-out 0.5s', color: 'black', mb: '3', '&:hover': { background: '#A99577', color: 'white', border: '2px solid #A99577' } }} type="submit" >Submit Review</Button>
+            <Button sx={{ background: 'transparent', border: '2px solid black', borderRadius: '0', py: '10px', px: '25px', marginTop: '10px', transition: 'all ease-in-out 0.5s', color: 'black', mb: '3', '&:hover': { background: '#cfb54c', color: 'white', border: '2px solid #cfb54c' } }} type="submit" >Submit Review</Button>
         </Box>
     );
 };

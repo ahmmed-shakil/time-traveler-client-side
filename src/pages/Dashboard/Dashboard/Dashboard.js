@@ -49,9 +49,9 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <h4>Welcome {user?.displayName}</h4>
-                <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave' }} to='/'>
+                <Link style={{ color: 'black' }} to='/'>
                     <ListItem>
-                        <ListItemText >
+                        <ListItemText sx={{ fontWeight: '500', fontFamily: 'Poppins' }} >
                             <Home />
                         </ListItemText>
                     </ListItem>
@@ -60,9 +60,9 @@ function Dashboard(props) {
 
                 {
                     !admin ? <Box>
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}`}>
-                            <ListItem button>
-                                <ListItemText>
+                        <Link style={{ color: 'black', textDecoration: 'none', fontWeight: '600', fontFamily: 'Poppins' }} to={`${url}`}>
+                            <ListItem>
+                                <ListItemText >
                                     My Orders
                                 </ListItemText>
                             </ListItem>
@@ -71,7 +71,7 @@ function Dashboard(props) {
                     </Box>
                         :
                         <Box>
-                            <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}`}>
+                            <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}`}>
                                 <ListItem button>
                                     <ListItemText>
                                         Manage All Orders
@@ -85,7 +85,7 @@ function Dashboard(props) {
 
                 {
                     !admin && <Box>
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}/review`}>
+                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}/review`}>
                             <ListItem button>
                                 <ListItemText>
                                     Review
@@ -94,7 +94,7 @@ function Dashboard(props) {
                         </Link>
                         <Divider />
 
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}/pay`}>
+                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}/pay`}>
                             <ListItem button>
                                 <ListItemText>
                                     Pay
@@ -107,7 +107,7 @@ function Dashboard(props) {
 
                 {
                     admin && <Box>
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}/addProduct`}>
+                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}/addProduct`}>
                             <ListItem button>
                                 <ListItemText>
                                     Add New Product
@@ -116,7 +116,7 @@ function Dashboard(props) {
                         </Link>
                         <Divider />
 
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}/manageProducts`}>
+                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}/manageProducts`}>
                             <ListItem button>
                                 <ListItemText>
                                     Manage Products
@@ -125,7 +125,7 @@ function Dashboard(props) {
                         </Link>
                         <Divider />
 
-                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }} to={`${url}/makeAdmin`}>
+                        <Link style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }} to={`${url}/makeAdmin`}>
                             <ListItem button>
                                 <ListItemText>
                                     Make Admin
@@ -138,7 +138,7 @@ function Dashboard(props) {
 
                 <ListItem button onClick={logout}>
                     <ListItemText>
-                        <span style={{ color: 'black', fontWeight: '500', fontFamily: 'Mohave', textDecoration: 'none' }}>Log Out</span>
+                        <span style={{ color: 'black', fontWeight: '500', fontFamily: 'Poppins', textDecoration: 'none' }}>Log Out</span>
                     </ListItemText>
                 </ListItem>
 
@@ -153,12 +153,12 @@ function Dashboard(props) {
             <CssBaseline />
             <AppBar
                 position="fixed"
-                elevation='0'
+                elevation={0}
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
-                    background: 'transparent',
-                    color: 'green'
+                    background: 'black',
+                    color: 'white'
                 }}
             >
                 <Toolbar>
@@ -171,8 +171,8 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" sx={{ fontFamily: 'Mohave' }}>
-
+                    <Typography variant="h6" noWrap component="div" sx={{ fontFamily: 'Poppins' }}>
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -201,7 +201,7 @@ function Dashboard(props) {
                     variant="permanent"
                     sx={{
                         display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: '#A99577', border: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, background: '#cfb54c', border: 'none' },
                     }}
                     open
                 >
@@ -225,24 +225,28 @@ function Dashboard(props) {
                                 <ManageAllOrders></ManageAllOrders>
                             </Route>
                     }
-                    <Route path={`${path}/review`}>
-                        <Review></Review>
-                    </Route>
-                    <Route path={`${path}/pay`}>
-                        <Pay></Pay>
-                    </Route>
-                    {/* <Route path={`${path}/manageOrders`}>
-                        <ManageAllOrders></ManageAllOrders>
-                    </Route> */}
-                    <Route path={`${path}/addProduct`}>
-                        <AddNewProduct></AddNewProduct>
-                    </Route>
-                    <Route path={`${path}/manageProducts`}>
-                        <ManageProducts></ManageProducts>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </Route>
+                    {!admin ?
+                        <Box>
+                            <Route path={`${path}/review`}>
+                                <Review></Review>
+                            </Route>
+                            <Route path={`${path}/pay`}>
+                                <Pay></Pay>
+                            </Route>
+                        </Box>
+                        :
+                        <Box>
+                            <Route path={`${path}/addProduct`}>
+                                <AddNewProduct></AddNewProduct>
+                            </Route>
+                            <Route path={`${path}/manageProducts`}>
+                                <ManageProducts></ManageProducts>
+                            </Route>
+                            <Route path={`${path}/makeAdmin`}>
+                                <MakeAdmin></MakeAdmin>
+                            </Route>
+                        </Box>
+                    }
                 </Switch>
 
             </Box>

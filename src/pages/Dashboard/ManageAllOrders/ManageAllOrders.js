@@ -40,7 +40,22 @@ const ManageAllOrders = () => {
             .then(data => setOrders(data))
     }, [])
 
-
+    const handleApproveStatus = id => {
+        const proceed = window.confirm('Do you want to upgrade order status to shipped?');
+        if (proceed) {
+            const url = `http://localhost:5000/orders/${id}`
+            fetch(url, {
+                method: 'PUT'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount > 0) {
+                        alert('Order has been approved')
+                        window.location.reload();
+                    }
+                })
+        }
+    }
 
     const handleDeleteWatch = id => {
         const proceed = window.confirm("Are you sure you want to delete?");
@@ -93,7 +108,7 @@ const ManageAllOrders = () => {
                                 <StyledTableCell align="left">{order?.status}</StyledTableCell>
                                 <StyledTableCell align="center" >
                                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'between' }} >
-                                        <Button size='small' sx={{ background: 'green', color: 'white', '&:hover': { background: 'silver', color: 'black' } }}>Approve</Button>
+                                        <Button onClick={() => handleApproveStatus(order._id)} size='small' sx={{ background: 'green', color: 'white', '&:hover': { background: 'silver', color: 'black' } }}>Approve</Button>
                                         <DeleteIcon sx={{ color: 'red' }} onClick={() => handleDeleteWatch(order._id)} />
                                     </Box>
                                 </StyledTableCell>
