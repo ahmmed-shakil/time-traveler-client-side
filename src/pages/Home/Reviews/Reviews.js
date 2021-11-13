@@ -78,7 +78,7 @@ const Reviews = () => {
                                             {review?.name}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {review?.description}
+                                            {review?.review}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
