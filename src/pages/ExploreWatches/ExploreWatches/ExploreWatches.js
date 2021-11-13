@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation/Navigation';
 import SingleWatch from '../SingleWatch/SingleWatch';
 
@@ -32,6 +33,7 @@ const ExploreWatches = () => {
                     }
                 </Grid>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

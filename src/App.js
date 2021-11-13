@@ -12,6 +12,7 @@ import Register from './pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Purchase from './pages/Purchase/Purchase';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             <PrivateRoute path='/purchase/:id'>
               <Purchase></Purchase>
             </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

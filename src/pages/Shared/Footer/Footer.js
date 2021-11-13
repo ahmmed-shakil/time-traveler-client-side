@@ -10,10 +10,10 @@ const Footer = () => {
                 sx={{
                     px: { xs: 5, sm: 8 },
                     py: { xs: 5, sm: 8 },
-                    backgroundColor: "grey",
+                    backgroundColor: "#282E21",
                     color: "white",
+                    fontFamily: 'Poppins'
                 }}
-                className="Titillium"
             >
                 <Container maxWidth="lg">
                     <Grid container spacing={5}>
