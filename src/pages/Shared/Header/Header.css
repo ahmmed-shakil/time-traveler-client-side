@@ -1,0 +1,22 @@
+.nav-bg{
+    background-color: white;
+}
+.nav-items{
+    font-size: 1rem; 
+}
+.text-color{
+    color: #A99577;
+}
+.nav-item{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0px;
+    margin-left: 15px;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+
+.nav-item:hover , .nav-item.active {
+    border-bottom: 3px solid #A99577;
+    color: #A99577;
+}
